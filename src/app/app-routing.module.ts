@@ -7,8 +7,7 @@ import { SeisComponent } from './exercicio06/exercicio06.component';
 
 const routes: Routes = [
   { path: '', component: QuatroComponent},
-  { path: '05', component: CincoComponent},
-  { path: '06', component: SeisComponent}
+  { path: '05', component: CincoComponent}
 ];
 
 @NgModule({

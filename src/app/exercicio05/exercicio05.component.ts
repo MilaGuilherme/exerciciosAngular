@@ -24,7 +24,7 @@ export class CincoComponent implements OnInit {
   getHomePage() {
     this.cincoService.getMovies()
      .subscribe(
-       dados => {
+       (dados:any) => {
          this.filmes = dados.results;
          this.filmesSearch = dados.results;
 
