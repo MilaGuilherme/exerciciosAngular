@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { QuatroComponent } from './exercicio04/exercicio04.component';
 import { CincoComponent } from './exercicio05/exercicio05.component';
 import { SeisComponent } from './exercicio06/exercicio06.component';
+import { SortPipe } from './exercicio06/sort.pipe';
+import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SeisComponent } from './exercicio06/exercicio06.component';
     QuatroComponent,
     CincoComponent,
     SeisComponent,
+    SortPipe,
+    MoviesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,45 @@
-<p>exercicio06 works!</p>
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">{{ title }}</h1>
+        <p class="lead text-muted">Os Melhores Filmes a sua Disposição Aqui.</p>
+        <input type="text" [(ngModel)]="movieSearch" id="form1" class="form-control" placeholder="Pesquise um Filme"
+          (input)="Search()" />
+        <p>
+          Ordernar Por
+          <br>
+          <button type="button" (click)="Order('votes')" class="btn btn-primary my-2">Votos</button>
+          &nbsp;
+          <button type="button" (click)="Order('title')" class="btn btn-primary my-2">Título</button>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div *ngFor="let filme of filmes | sort:way : order ">
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>{{ filme.title }}</title>
+                <rect width="100%" height="100%" fill="#fffff" />
+                <image style="opacity: 30%" width="100%" [attr.xlink:href]="filme.img" clip-path="url(#myCircle)" />
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ filme.title }}</text>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">{{ filme.overview | slice:0:260}} ...</p><a routerLink="/movies/{{filme.id}}">Ler
+                  Mais</a>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">{{ filme.release_date }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
